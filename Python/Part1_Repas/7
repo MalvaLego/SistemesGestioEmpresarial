@@ -1,0 +1,56 @@
+import random
+
+#métode per al nombre aleatori
+def numAleatori():
+        aleatori = random.randint(1, 5)
+        if (aleatori==1):
+             return "red"
+        elif (aleatori==2):
+             return "white"
+        elif (aleatori==3):
+             return "black"
+        elif (aleatori==4):
+             return "pink"
+        else:
+             return "blue"
+
+#classe Car
+class Car:
+    matricula=0
+    color=""
+    
+    def __init__(self, matricula,color):
+        self.matricula = matricula
+        self.color=color
+
+    def printar(self):
+        print("-------")
+        print("Matrícula: ",self.matricula)
+        print("Color: ",self.color)
+
+    def getMatricula(self):
+         return self.matricula
+    
+    def getColor(self):
+         return self.color
+
+#Exercici
+llista=[]
+num=int(input("Escriga un nombre(número):"))
+
+#crea els objectes i els posa en una llista
+for i in range (1,num+1):
+    obj = Car(i, numAleatori())
+    llista.append(obj)
+
+#imprimeix els valors dels deu primers objectes i si té menys els imprimeix tots
+if (num<10):
+    for obj in llista:       
+         obj.printar()
+else:
+    cont=0
+    for obj in llista:       
+        obj.printar()
+        cont=cont+1
+        if (cont==10):
+             exit()
