@@ -1,0 +1,9 @@
+
+#llista amb altres llistes dins
+llista=[[165,63],[184,75],[184,40]]
+print(llista)
+
+#ordena la llista per major altura i en cas d’igualtat, l'ordena per menor pes
+llista_ordenada = sorted(llista, key=lambda persona: (-persona[0], persona[1]))
+
+print(llista_ordenada)
