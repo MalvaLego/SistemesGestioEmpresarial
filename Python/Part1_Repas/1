@@ -1,0 +1,25 @@
+#Clonar una llista
+lista= [1,2,3,4,5]
+listaCopy= lista.copy()
+
+#¿Quina és la diferència en Python entre “shallow copy” i “deep copy”?
+    #La diferència afecta a les llistes que tenen objectes dins, la shallow copy
+    #copia les referències dels objectes i la deep copy fa una copia d'aquestos.
+
+#Afegir un element a una llista.
+lista.append(6)
+
+#Llevar un element a una llista.
+lista.remove(6)
+
+#Crear una nova llista amb els 4 últims elements d’una llista.
+listaNova= lista[1:]
+
+#Convertir les paraules d’una cadena (separades per espai) a una llista.
+paraula= "h o l a"
+listaParaula= paraula.split(" ")
+
+#Comentaris amb una línia.
+
+""" Comentaris 
+multilínia. """
