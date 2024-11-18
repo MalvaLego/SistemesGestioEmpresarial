@@ -1,0 +1,5 @@
+import sys
+
+#Imprimeix el nombre de paràmetres que s'han possat en la terminal i els que s'han possat
+print ("Nombre de paràmetres: ", len(sys.argv))
+print ("Llista de arguments: ", sys.argv)
