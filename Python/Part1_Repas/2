@@ -1,0 +1,33 @@
+def suma(a,b):
+    return a+b
+
+def modificar_lista(lista):
+    cont=0
+    for i in lista:
+        lista[cont]=i*2
+        cont=cont+1
+
+def copia_lista(lista):
+    listaNova= lista.copy()
+    cont = 0
+    for i in listaNova:
+        listaNova[cont]=i*2
+        cont=cont+1
+    return listaNova
+
+lista= [1,2,3,4,5,6]
+
+#Reva 2 números i torne la suma.
+print(suma(2,3))
+
+#Reva una llista i modifique eixa mateixa llista (referència) doblant els valors de tots els
+#elements. No ha de retornar res.
+modificar_lista(lista)
+print(lista)
+print()
+
+#Reva una llista i torne una còpia de la llista mateixa llista (referència) doblant els valors de
+#tots els elements. La llista original no hi ha de modificar-se.
+listaNova=copia_lista(lista)
+print(lista)
+print(listaNova)
