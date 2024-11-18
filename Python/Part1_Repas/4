@@ -1,0 +1,17 @@
+
+lista= [1,2,3]
+dato=7
+cadena = "abcd"
+
+#IN: per cada 'dato' que té lista dins, imprime aquest 'dato'
+for dato in lista:
+    print(dato)
+
+#IS: s'ha utilitzat de forma pareguda a un igual coomparant si 'dato' és 4 
+if (dato is 4):
+    print("Si es")
+else:
+    print("No es")
+
+#NOT in: retorna true si la lletra 'f' no está en la cadena
+print("f" not in cadena)
