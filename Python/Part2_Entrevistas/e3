@@ -1,0 +1,21 @@
+#Métode per a recorrer cada caràcter sumant 1 si té el patró correcte
+def numeroPatrones(text):
+    numPatrons=0
+    for i in range(0,len(cad)-1):
+        if (cad[i]=="0") and (cad[(i+1)]=="0"):
+            numPatrons=numPatrons+1
+        if (i < len(cad)) - 2: 
+            if (cad[i]=="1") and (cad[(i+1)]=="0") and (cad[i+2]=="1"):
+                numPatrons=numPatrons+1
+            if (cad[i]=="A") and (cad[(i+1)]=="B") and (cad[i+2]=="C"):
+                numPatrons=numPatrons+1 
+        elif (cad[i].upper()=='H') and (cad[(i+1)].upper()=='O'):
+            numPatrons=numPatrons+1 
+
+    return numPatrons
+
+#Principal
+cad=input("Escriga una cadena de text: ")
+numTotal=numeroPatrones(cad)
+
+print("Nombre de patrons totals:",numTotal)
