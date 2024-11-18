@@ -1,0 +1,35 @@
+def esSudokuCorrecto(miArrayBi):
+    if ():
+        return True
+    else: return False
+
+fichero = open('Sudoku.in')
+
+sudoku=[]
+miArrayBi=True
+
+for i in range (0,9):
+    cad=fichero.readline()
+    array=cad.split("\n")
+    array1=array[0].split(" ")
+    sudoku.append(array1)
+    
+for i in range(0,len(sudoku)):
+    for j in range(0,len(sudoku)):
+        print(sudoku[i][j]," ",end="")
+    print("\n")
+
+#for i in range(0,len(sudoku)):
+for j in range(0,len(sudoku)):
+    if  (j==0):
+        num=sudoku[0][0]
+    else:    
+        if (num==sudoku[0][j]):
+            #print(sudoku[i][j]," ",end="")
+            miArrayBi=False
+        num=sudoku[0][j]
+        
+    
+
+valor=esSudokuCorrecto(miArrayBi)
+print(valor)
