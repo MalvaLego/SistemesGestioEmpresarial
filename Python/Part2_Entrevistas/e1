@@ -1,0 +1,21 @@
+from functools import reduce
+
+#Amb una funció lmbda no fa falta posar-la al principi del codi i per a fer-la es crea una variable que contindrá el que es vulga fer.
+#En aquest exemple es crida a 'square' amb un int i s'indica amb el lambda eixe int y es fa la operació del quadrat d'un nombre.
+#square = lambda x: x ** 2
+#print(square(3))
+
+
+cad=input("Escriga una cadena de text de nombre sencers separtas per espai: ")
+
+#Passa els valors de la cadena a una llista fent split d'aquesta y passant a integer
+llista= list(map(lambda x: int(x), cad.split(" ")))
+print(llista)
+
+#Es crea una nova llista amb els valor de la llista nterior pero sols qels que son majors de 10
+llistaFiltro = list(filter(lambda x: x >= 10, llista))
+print(llistaFiltro)
+
+#multiplica totos els valors de la llista anterior
+multi= reduce(lambda x,y: x * y, llistaFiltro)
+print(multi)
