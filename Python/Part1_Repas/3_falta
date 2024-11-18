@@ -1,0 +1,44 @@
+import hashlib
+
+#Utilitzant una llista
+usuaris= ["usuari1","usuari2","usuari3","usuari4","usuari5"]
+contrasenyes=["contra1","contra2","contra3","contra4","contra5"]
+
+#Utilitzant un diccionari
+dic = {
+    "usuari1": "contra1",
+    "usuari2": "contra2",
+    "usuari3": "contra3",
+    "usuari4": "contra4",
+    "usuari5": "contra5"
+}
+
+
+#h = hashlib.new("sha1", contrasenyes[0]"contra1")
+#print(h.digest())
+
+#print(contrasenyes[0])
+
+#for i in range (0,4):
+#    h = hashlib.new("sha1", contrasenyes[i])
+#    print(h.digest())
+#    i=i+1
+    
+Partint d’un context en què volem emmagatzemar un usuari i la seua contrasenya. Fes un exemple
+que explica com es faria:
+● Utilitzant una llista.
+● Utilitzant un diccionari.
+En omplir-se, les contrasenyes han de passar-se a un format Hash (per exemple SHA
+https://recursospython.com/guias-y-manuales/hashlib-md5-sha/ ). L’exemple ha d’omplir la llista
+amb 5 usuaris/contrasenya i fer dues consultes.
+
+
+
+for country in countries_capital.keys():
+    print(country)
+
+for capital in countries_capital.values():
+    print(capital)
+
+for country, capital in countries_capital.items():
+    print(country, ":", capital)
