@@ -1,0 +1,57 @@
+def esPalindromo(linea):
+    if linea==linea[::1]:
+        return True
+    return False
+
+def esPrimo(linea):    
+    num=int(linea)
+    if (num<=1):
+        return False 
+    for i in range(2, num):
+        if (num % i==0): 
+            return False
+    return True
+
+numPalidrimos=0
+numPrimos=0
+mateixosNombres=[]
+
+#Creació dels fitxers
+nomEntrada=input("Escriu un nom per al fitxet d'entrada: \n")
+nomEixida=input("Escriu un nom per al fitxet d'eixida: \n")
+
+fitxerEntrada = open(nomEntrada+".txt", 'w')
+fitxerEixida = open(nomEixida+".txt", 'w')
+
+#Ecriure en el fitxer creat els nombres
+lista = [5,7, 11,13,14,15,22]
+for num in lista:
+    fitxerEntrada.write(str(num)+"\n")
+fitxerEntrada.close()
+
+#LLegir el fitxer i veure si es palíndrome o primo
+fitxerEntrada = open(nomEntrada+".txt", 'r')
+lineas = fitxerEntrada.readlines()
+for linea in lineas:
+    if (esPalindromo(linea)):
+        numPalidrimos=numPalidrimos+1
+
+    if (esPrimo(linea)):
+        numPrimos=numPrimos+1
+
+    if (esPalindromo(linea)) and (esPrimo(linea)):   
+        if (linea!="13\n"):
+            mateixosNombres.append(linea)
+
+
+#Esriu la eixida en l'altre fitxer
+numPalidrimos=numPalidrimos-(int(numPalidrimos/2))
+
+fitxerEixida.write("Hi han "+str(numPalidrimos)+" nombre palindroms\n")
+fitxerEixida.write("Hi han "+str(numPrimos)+" nombre cosins\n")
+for num in mateixosNombres:
+    fitxerEixida.write(num)
+
+
+fitxerEntrada.close()
+fitxerEixida.close()
