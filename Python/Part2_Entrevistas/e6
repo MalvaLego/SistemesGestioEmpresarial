@@ -1,0 +1,44 @@
+from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.orm import declarative_base, sessionmaker
+
+#Connexió i configuració de la base de dades
+engine = create_engine('sqlite:///escola.db')
+base = declarative_base()
+session = sessionmaker(bind=engine)()
+
+#Classe Alumne amb ORM
+class Alumne(base):
+    __tablename__ = 'alumnes'
+    id = Column(Integer, primary_key=True)
+    nom = Column(String, nullable=False)
+    curs = Column(String, nullable=False)
+
+#Crear taula
+base.metadata.create_all(engine)
+
+#Agregar alumnes
+print("·Abans de modificar")
+session.add_all([Alumne(nom='Anna', curs='1r ESO'), Alumne(nom='Marc', curs='2n ESO')])
+session.commit()
+
+#Consultar i mostrar alumnes abands de modificar
+for alumne in session.query(Alumne):
+    print(alumne.nom, alumne.curs)
+
+#Actualitzar
+alumne = session.query(Alumne).filter_by(nom='Anna').first()
+if alumne: alumne.curs = '2n ESO'
+
+#Eliminar
+session.delete(session.query(Alumne).filter_by(nom='Marc').first())
+
+
+#Consultar i mostrar alumnes després de modificar
+print("·Després de modificar")
+for alumne in session.query(Alumne):
+    print(alumne.nom, alumne.curs)
+
+#Per eliminar les dades de dins
+#session.query(Alumne).delete()
+
+session.commit()
