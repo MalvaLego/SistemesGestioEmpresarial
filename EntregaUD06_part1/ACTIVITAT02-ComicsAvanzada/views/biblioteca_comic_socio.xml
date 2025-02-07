@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='biblioteca_comic_socio_action' model='ir.actions.act_window'>
+        <field name="name">Socios</field>
+        <!-- Indicamos vistas para este modelo (socio) -->
+        <field name="res_model">biblioteca.comic.socio</field>
+        <!-- Indicamos que este modelo se puede ver en kanban, tree y form -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Socios" id="biblioteca_comic_socio_menu" parent="biblioteca_base_menu" action="biblioteca_comic_socio_action" />
+
+    <!-- VISTA DE FORMULARIO -->
+    <record id="biblioteca_comic_socio_view_form" model="ir.ui.view">
+        <field name="name">Formulario socios Comics biblioteca</field>
+        <field name="model">biblioteca.comic.socio</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="nombre" />
+                    </group>
+                    <group>
+                        <field name="apellido" />
+                    </group>
+                    <group>
+                        <field name="identificador" />
+                    </group>                    
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Tree -->
+    <record id="biblioteca_comic_socio_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Comics de la biblioteca</field>
+        <field name="model">biblioteca.comic.socio</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre" />
+                <field name="apellido" />
+                <field name="identificador" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>
