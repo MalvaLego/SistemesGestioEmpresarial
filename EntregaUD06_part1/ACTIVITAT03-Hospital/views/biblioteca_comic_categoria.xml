@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='biblioteca_comic_categoria_action' model='ir.actions.act_window'>
+        <field name="name">Diagnóstico</field>
+        <!-- Indicamos vistas para este modelo (categoria) -->
+        <field name="res_model">biblioteca.comic.categoria</field>
+        <!-- Indicamos que este modelo se puede ver en kanban, tree y form -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Diagnóstico" id="biblioteca_comic_categoria_menu" parent="biblioteca_base_menu" action="biblioteca_comic_categoria_action" />
+
+    <!-- VISTA DE FORMULARIO -->
+    <record id="biblioteca_comic_categoria_view_form" model="ir.ui.view">
+        <field name="name">Formulario diagnosticos</field>
+        <field name="model">biblioteca.comic.categoria</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>                                    
+                    <group>
+                        <field name="comic_id" />
+                    </group>                      
+                    <group>
+                        <field name="socio_id" />
+                    </group>
+                    <group>
+                        <field name="diagnostico" />
+                    </group>                                       
+                </group>                
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Tree -->
+    <record id="biblioteca_comic_categoria_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Diagnósticos</field>
+        <field name="model">biblioteca.comic.categoria</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="comic_id" />
+                <field name="socio_id" />                
+                <field name="diagnostico" />                
+            </tree>
+        </field>
+    </record>
+
+
+</odoo>
